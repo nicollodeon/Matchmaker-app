@@ -1,0 +1,141 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="main">
+    <div class="desktop-nav">
+        <div class="logo">Finder</div>
+        <div class="desktop-nav-list">
+            <div class="desktop-nav-item">
+                <a href="{{ url_for('index', username=current_user.username) }}">
+                    <div class="nav-icon"><i class="fa-solid fa-house"></i></div>
+                </a>
+                <a href="{{ url_for('index', username=current_user.username) }}">
+                    <div class="nav-title">Profile</div>
+                </a>
+            </div>
+            <div class="desktop-nav-item">
+                <a href="{{ url_for('history') }}">
+                    <div class="nav-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+                </a>
+                <a href="{{ url_for('history') }}">
+                    <div class="nav-title">Search</div>
+                </a>
+            </div>
+            <div class="desktop-nav-item">
+                <a href="{{ url_for('queue') }}">
+                    <div class="nav-icon"><i class="fa-solid fa-infinity"></i>
+                    </div>
+                </a>
+                <a href="{{ url_for('queue') }}">
+                    <div class="nav-title">Match</div>
+                </a>
+            </div>
+            <div class="desktop-nav-item">
+                <a href="{{ url_for('logout') }}">
+                    <div class="nav-icon"><i class="fa-solid fa-right-from-bracket"></i></div>
+                </a>
+                <a href="{{ url_for('logout') }}">
+                    <div class="nav-title">Logout</div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="user-dashboard">
+        <div class="user-info">
+            <div class="staggered-text">
+                <h1 class="left">Ready to find</h1>
+                <h1 class="center">your match</h1>
+                <h1 class="right">{{ current_user.username }}?</h1>
+            </div>
+        </div>
+
+        <button class="match-btn" id="queueButton">
+            Join the Queue
+        </button>
+        <span id="queueTimer" hidden>Queue time: 0 seconds</span>
+
+        <button class="match-btn" id="leaveQueueButton" hidden>
+            Leave the Queue
+        </button>
+    </div>
+    <div class="mobile-nav">
+        <a href="{{ url_for('index', username=current_user.username) }}">
+            <div class="nav-icon"><i class="fa-solid fa-house"></i></div>
+        </a>
+        <a href="{{ url_for('history') }}">
+            <div class="nav-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+        </a>
+        <a href="{{ url_for('queue') }}">
+            <div class="nav-icon"><i class="fa-solid fa-infinity"></i>
+            </div>
+        </a>
+    </div>
+</div>
+
+<script>
+    document.getElementById("queueButton").onclick = function () {
+        this.disabled = true;
+        //document.getElementById("leaveQueueButton").disabled = false;
+        document.getElementById("leaveQueueButton").hidden = false;
+        this.innerText = "Waiting in queue...";
+        document.getElementById("queueTimer").hidden = false;
+        queueTimeSeconds = 0;
+        queueTimerInterval = setInterval(() => {
+            queueTimeSeconds++;
+            document.getElementById("queueTimer").innerText = `Queue time: ${queueTimeSeconds} seconds`;
+        }, 1000);
+        // Send a POST request to join the queue
+        fetch('/join_queue', { method: 'POST' })
+            .then(response => {
+                if (response.ok) {
+                    // Start polling the '/check_queue_status' route
+                    checkQueueStatus();
+                }
+            });
+    };
+
+    document.getElementById("leaveQueueButton").onclick = function () {
+        //this.disabled = true;
+        document.getElementById("queueButton").disabled = false;
+        this.hidden = true
+        // Send a POST request to leave the queue
+        fetch('/leave_queue', { method: 'POST' })
+            .then(response => {
+                if (response.ok) {
+                    // Stop the queue timer
+                    clearInterval(queueTimerInterval);
+                    document.getElementById("queueTimer").hidden = true;
+                    document.getElementById("queueButton").innerText = "Join the Queue";
+                }
+            });
+    };
+
+    function checkQueueStatus() {
+        fetch('/check_queue_status')
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);  // Log the data received from the server
+
+                if (!data.in_queue) {
+                    clearInterval(queueTimerInterval);
+                    document.getElementById("queueTimer").hidden = true;
+                    console.log('User is not in queue.');  // Log the status of the user
+
+                    if (data.chat_url) {
+                        console.log('Redirecting to:', data.chat_url);  // Log the URL you're redirecting to
+                        // Redirect the user to the private chat
+                        window.location.href = data.chat_url;
+                    } else {
+                        // An error occurred, refresh the page
+                        window.location.reload();
+                    }
+                } else {
+                    // The user is still in the queue, check again in 5 seconds
+                    console.log('User is still in queue. Checking again in 5 seconds.');  // Log the status of the user
+                    setTimeout(checkQueueStatus, 500);
+                }
+            });
+    }
+</script>
+{% endblock %}
