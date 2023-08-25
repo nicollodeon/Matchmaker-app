@@ -43,7 +43,7 @@ PROCESS:
 
 Starting the app:
 - For the first time, run 'flask db upgrade'
-- Run 'flask run' to host the application locally
+- Please Run 'flask run' to host the application locally
 
 Testing and validation:
 - All validation on HTML passes on The W3C Markup Validation Service except the errors got from jinja extension
