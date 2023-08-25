@@ -1,0 +1,150 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div id="home" class="home">
+    <!-- NavBar -->
+    <div class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="#home"><img class="logo" src="{{ url_for('static', filename='images/tinder_icon.png') }}"
+                        alt="Finder"></a>
+            </div>
+            <div class="links">
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#our-team">Our Team</a></li>
+                    <li><a href="#FAQs">FAQs</a></li>
+                </ul>
+                <a href="{{ url_for('login') }}"><button class="login-btn" type="submit">Log In</button></a>
+            </div>
+            <div class="hamburger-menu">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </div>
+    </div>
+    <div class="body-container">
+        <!-- Home -->
+        <div class="home-container">
+            <div class="home-left">
+                <div class="left-wrapper">
+                    <h2 class="name">Finder</h2>
+                    <div class="feature">
+                        <div class="feature-wrapper">
+                            <div class="feature-item">Fast Matching</div>
+                            <div class="feature-item">Chat & Connect</div>
+                            <div class="feature-item">User Focus</div>
+                            <div class="feature-item">No Subscription</div>
+                            <div class="feature-item">Free to use</div>
+                        </div>
+                    </div>
+                    <div class="slogan">No more hindering</div>
+                    <a href="{{ url_for('register') }}"><button>Join us today!</button></a>
+                </div>
+            </div>
+            <div class="home-right">
+                <img class="logo" src="{{ url_for('static', filename='images/smoke_heart.png') }}" alt="Smoke Heart">
+            </div>
+        </div>
+
+        <!-- About -->
+        <div class="about-container" id="about">
+            <div class="title-container">
+                <h1>About Us</h1>
+                <img class="logo" src="{{ url_for('static', filename='images/lovebird.png') }}" alt="Smoke Heart">
+            </div>
+            <div class="content-container">
+                <p>Hey everyone! Thanks for using our website. We are a small team of computer science students studying at UWA. We made this fun little website for you to fulfil your speed dating desires. 
+                    With our application, you can bid farewell to awkward blind dates and time-consuming swiping. 
+                    Our application streamlines the process, queing you up immediately to find the next love of your life, in a fast, personalised setting. We hope you find your journey here successful!
+                </p>
+                <img src="{{ url_for('static', filename='images/orange-heart.png') }}" alt="Smoke Heart">
+            </div>
+        </div>
+
+        <!-- Our Team -->
+        <div class="our-team-container" id="our-team">
+            <div class="title-container">
+                <h1>Our Team</h1>
+                <img class="logo" src="{{ url_for('static', filename='images/lovebird.png') }}" alt="lovebird">
+            </div>
+            <div class="content-container">
+                <div class="row1">
+                    <div class="team-member">
+                        <div class="member-img">
+                            <img src="{{ url_for('static', filename='images/charles-icon.png') }}" alt="charles-icon">
+                        </div>
+                        <h3>Charles So</h3>
+                        <p>Hey guys, pleased to be your acquaintance. Like the rest of our team, I am a third year computer science student at UWA. We worked hard to create this website and hope you enjoy!</p>
+                    </div>
+
+                    <div class="team-member">
+                        <div class="member-img">
+                            <img src="{{ url_for('static', filename='images/zachary.png') }}" alt="user-icon">
+                        </div>
+                        <h3>Zachary Tan</h3>
+                        <p>Hello! I made my profile picture a cute picture when I was a baby. Please enjoy our website </p>
+                    </div>
+                </div>
+                <div class="row2">
+                    <div class="team-member">
+                        <div class="member-img">
+                            <img src="{{ url_for('static', filename='images/edison.png') }}" alt="user-icon">
+                        </div>
+                        <h3>Edison Foo</h3>
+                        <p>Hey everybody, I'm Edison, one of the developers of this application. I'm a third year major in computer science and pathology at UWA. </p>
+                    </div>
+
+                    <div class="team-member">
+                        <div class="member-img">
+                            <img src="{{ url_for('static', filename='images/user-icon.png') }}" alt="user-icon">
+                        </div>
+                        <h3>Nicole</h3>
+                        <p>Hey guys! I'm Nicole, a third year student at UWA. I study data science and finance. </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQs -->
+        <div class="FAQs-container" id="FAQs">
+            <div class="title-container">
+                <h1>FAQs</h1>
+                <img class="logo" src="{{ url_for('static', filename='images/lovebird.png') }}" alt="lovebird">
+            </div>
+            <div class="content-container">
+                <div class="accordion">
+                    <div class="accordion-item">
+                        <div class="question">How does Finder work?</div>
+                        <div class="ans">Think of Finder as a speed dating application. Our main goal is to match you up with your next significant other. We do this by queueing you into a pool of online users, 
+                            of which you'll be matched with someone - but there's a twist! Whilst you'll be able to chat with that user, you won't be able to see their profile and only their username. 
+                            Should you choose to match with them, you'll be able to see their profile page and all their information! 
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <div class="question">What sets it apart from other dating sites?</div>
+                        <div class="ans">Our site attempts to remove as many biases as we can from the dating experience. Users will not get to see the other user until after they match! 
+                            This is so that users will focus on the personality aspect of dating rather than the physical. 
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <div class="question">Can I meet new friend there?</div>
+                        <div class="ans">This website is meant for dating! Please don't come here to find new friends.</div>
+                    </div>
+                    <div class="accordion-item">
+                        <div class="question">Do I need to pay for the service?</div>
+                        <div class="ans">All our services are free! Enjoy your stay.</div>
+                    </div>
+                </div>
+            </div>
+            <script src="{{ url_for('static', filename='script/home.js') }}"></script>
+            <div class="img-container">
+                <img src="{{ url_for('static', filename='images/pink-heart.png') }}" alt="Smoke Heart">
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,112 @@
+Git log (showing all authors and commits)
+* 3077810 Edison Foo      fixed saving chats
+* f59e233 Edison Foo      fixed saving matches after chat
+*   ecd4ffa Edison Foo      help me
+|\  
+| * 2259a5e ZacharyDTan     Changed home information
+| * 9b7db80 ZacharyDTan     Changes made
+| * 7ca4709 ZacharyDTan     Choice comes again if extend is picked
+| * c0792cd ZacharyDTan     Changes to my home page
+| * 69f95e9 ZacharyDTan     leave queue button now hidden
+| * 457a90c ZacharyDTan     Read genders and match
+* | a79628f Edison Foo      update those messages
+* | 5e6fdd5 Edison Foo      Merge branch 'main' of github.com:EdiFoo/Matcher-Maker
+|\| 
+| * 2b22673 ZacharyDTan     Add leave queue button
+* | 1227c89 Edison Foo      merge
+|\| 
+| * 47c42ca Charles So      partly frontend history
+| * 7affa94 nicole          +profile
+| * d34232b nicole          +profile
+* | 9f1fc7a Edison Foo      made match button prettier
+|/  
+* 21cc117 Edison Foo      css for private_chat.html
+*   b70f130 Edison Foo      Merge branch 'main' of github.com:EdiFoo/Matcher-Maker
+|\  
+| * 013ea85 ZacharyDTan     Queue length
+* | e9a5d13 Edison Foo      css queue.html
+|/  
+* c7c3212 Edison Foo      intergrate profile backend to profile frontend
+* 5d4929f nicole          frontend + chatdb"
+* a570c2c ZacharyDTan     Fixed button
+* 724a56a ZacharyDTan     changed redirect
+*   9ef7fa6 ZacharyDTan     Merge branch 'main' of https://github.com/EdiFoo/Matcher-Maker
+|\  
+| * 73ec534 Edison Foo      three chat buttons functions
+* | 33a1543 ZacharyDTan     Button Fix
+|/  
+* f54231c ZacharyDTan     Added buttons
+* 8d3bb1f ZacharyDTan     Replaced chat with a queuing function
+* 9f0f24a ZacharyDTan     Fixed duplication in chat
+* d5ac672 ZacharyDTan     Fixed backend
+* 03fc2aa ZacharyDTan     Finally fixed the backend
+* c906e8a ZacharyDTan     Changed the frontend CSS and HTML for chat page
+| * 4c975c9 nicole          matchdb
+| * b881950 nicole          match&historydb
+|/  
+* 3457f08 Edison Foo      fixed up the merge
+*   0badce9 Edison Foo      fix merge
+|\  
+| * 52044d4 Edison Foo      updated profile
+| * 8c0ecd1 Edison Foo      Can add custom profile pictures now
+| * 28fa6aa Edison Foo      basic profile and editing clean
+| * 304ef59 Edison Foo      basic profile and editing backup
+| * a8d7e70 Edison Foo      basic profile and editing
+* |   89a3d91 Edison Foo      merges
+|\ \  
+| |/  
+|/|   
+| * d04c4b6 Charles So      fixed home page
+| *   d28f765 Charles So      Merge branch 'integrateHtmlCss'
+| |\  
+| | * 5d189de Charles So      added home
+| | * f397588 Charles So      added homepage
+| | * 1fa49ae Charles So      added css for validation
+| | *   9527780 Charles So      Merge branch 'integrateHtmlCss' of https://github.com/EdiFoo/Matcher-Maker into integrateHtmlCs
+s
+| | |\  
+| | | *   8893b1c Edison Foo      merging
+| | | |\  
+| | | * | 3b528ac Edison Foo      random
+| | * | | 4e20e23 Charles So      css validation
+| | | |/  
+| | |/|   
+| | * | 1b15ac1 Charles So      added css/error msg
+| | |/  
+| | * 5078194 Charles So      added css
+| | * 6e00632 Edison Foo      some updates to error validation
+| | * e65a7cc Charles So      added login/signup page
+* | | 8f57d9b Edison Foo      Merge branch 'main' of github.com:EdiFoo/Matcher-Maker
+|\| | 
+| * | ba9850d ZacharyDTan     Merge branch 'main' of https://github.com/EdiFoo/Matcher-Maker
+| |\| 
+| * | f2081d7 ZacharyDTan     Basic Multiple user chat
+* | | 536bd0f Edison Foo      Added another user for testing
+| |/  
+|/|   
+* | 457b8f8 Edison Foo      commented out the pydantic stuff
+|/  
+* a5384a3 Edison Foo      basic form stuff
+* 0229d75 Edison Foo      Remove ignored files
+* efd3cda EdiFoo          Add files via upload
+* 28130b6 EdiFoo          Delete venv directory
+* da32828 EdiFoo          Delete __pycache__ directory
+*   80471f1 Edison Foo      Merge branch 'main' of https://github.com/EdiFoo/Matcher-Maker
+|\  
+| * 9205706 EdiFoo          Delete Share directory
+* | dc7bdcb Edison Foo      solve some merge issues
+|\| 
+| * b3d15a3 Charles So      added home page
+| * dc30b1b Charles So      added home page
+| * 18bb4ee EdiFoo          Server with login and registration
+| * c92d6b6 ZacharyDTan     Readjusting locations (temporary)
+| * 1ec208e ZacharyDTan     Readjusting location in github
+| * 9066ec4 Charles So      updated header
+| * 76dc035 Charles So      added home and sign up page
+| * 370c15c ZacharyDTan     Reverting Test
+| * ce12454 ZacharyDTan     Test
+* | c9ec3c0 Edison Foo      Server stuff but now slightly cleaned up with comments...
+|/  
+* 1e65488 EdiFoo          Initial commit
+
+Some commits that were made on Discord, we can provide the records of them if necessary.
